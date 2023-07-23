@@ -16,7 +16,7 @@
         if (httpReponse.Error)
         {
             var message = await httpReponse.GetErrorMessageAsync();
-            await sweetAlertService.FireAsync("Error", message);
+            await sweetAlertService.FireAsync("Error", message, SweetAlertIcon.Error);
             return;
         }
         countryForm!.FormPostedSuccessfully = true;
