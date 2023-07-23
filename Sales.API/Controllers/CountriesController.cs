@@ -45,7 +45,7 @@ namespace Sales.API.Controllers
         [HttpPut]
         public async Task<ActionResult> PutAsync(Country country)
         {
-            _context.Add(country);
+            _context.Update(country);
             await _context.SaveChangesAsync();
             return Ok(country);
         }
