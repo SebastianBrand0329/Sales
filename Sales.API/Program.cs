@@ -17,7 +17,7 @@ SeedData(app);
 
 void SeedData(WebApplication app)
 {
-    IServiceScopeFactory scopeFactory = app.Services.GetService<IServiceScopeFactory>();   
+    IServiceScopeFactory? scopeFactory = app.Services.GetService<IServiceScopeFactory>();   
     using(IServiceScope? scope = scopeFactory!.CreateScope())
     {
         SeedDb? service = scope.ServiceProvider.GetService<SeedDb>();
