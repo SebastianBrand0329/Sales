@@ -37,7 +37,8 @@ namespace Sales.API.Controllers
         public async Task<IActionResult> GetAsync(int id)
         {
             var country = await _context.Countries
-                .Include(x => x.States)
+                .Include(x => x.States!)
+                .ThenInclude(x => x.Cities)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (country == null)
             {
